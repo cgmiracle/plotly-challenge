@@ -1,3 +1,4 @@
+// create the function that gets the data and creates the plots for the id 
 function getPlot(id) {
     
     // get the data from the json file
@@ -86,6 +87,19 @@ function getPlot(id) {
 
         // create the bubble plot
         Plotly.newPlot("bubble", data1, layout); 
+
+        // create pie chart
+        var tracePie = {
+            labels: idOtu,
+            values:sampleValues,
+            type:"pie",
+        }
+
+        var data = [tracePie]
+        
+        
+        Plotly.newPlot("gauge", data)
+
     });    
 }
     
